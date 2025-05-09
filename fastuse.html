@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>应用更新</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 禁止用户复制 */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0078D4',
+                        secondary: '#6B7280',
+                        accent: '#3B82F6',
+                        neutral: '#F3F4F6',
+                        'neutral-dark': '#1F2937',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-transition {
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen font-inter">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- 标题栏 -->
+        <header class="mb-8">
+            <h1 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 dark:text-white text-center">应用更新中心</h1>
+            <p id="SID" class="text-sm text-gray-500 dark:text-gray-400 mt-1 text-center">Unknown SID</p>
+        </header>
+
+        <br>
+
+        <!-- 集控组件 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6">
+            <div class="flex items-start">
+                <div
+                    class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg mr-4 w-14 h-14 flex items-center justify-center">
+                    <i class="fa-solid fa-server text-3xl text-purple-500 dark:text-purple-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-white">集控管理</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1"><span id="SSID">未知校区</span></p>
+                    <p id="ERROR" class="text-sm text-red-500 dark:text-red-400 mt-1"><strong>集控 SID 文件缺失，请联系服务管理员</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- 应用小组件网格 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- QQ 稳定版应用小组件 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6">
+                <div class="flex items-start">
+                    <div
+                        class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4 w-14 h-14 flex items-center justify-center">
+                        <i class="fa-brands fa-qq text-3xl text-blue-500 dark:text-blue-400"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">QQ电脑版（办公稳定版）</h2>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">最新版本: <span
+                               id="qqwd-code" class="font-medium">Unknown</span></p>
+                        <a id="update-link-qqwd" href="#" target="_blank"
+                            class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg transition-all duration-200 flex items-center justify-center w-auto inline-flex">
+                            <i class="fa-solid fa-download mr-2"></i>
+                            <span>下载最新版本</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QQ 应用小组件 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6">
+                <div class="flex items-start">
+                    <div
+                        class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4 w-14 h-14 flex items-center justify-center">
+                        <i class="fa-brands fa-qq text-3xl text-blue-500 dark:text-blue-400"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">QQ电脑版（最新版）</h2>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">最新版本: <span
+                                 id="qq-code" class="font-medium">Unknown</span></p>
+                        <a id="update-link-qq" href="#" target="_blank"
+                            class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg transition-all duration-200 flex items-center justify-center w-auto inline-flex">
+                            <i class="fa-solid fa-download mr-2"></i>
+                            <span>下载最新版本</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 微信应用小组件 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6">
+                <div class="flex items-start">
+                    <div
+                        class="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg mr-4 w-14 h-14 flex items-center justify-center">
+                        <i class="fa-brands fa-weixin text-3xl text-green-500 dark:text-green-400"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">微信电脑版</h2>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">最新版本: <span
+                                id="weixin-code" class="font-medium">Unknown</span></p>
+                        <a id="update-link-wechat" href="#" target="_blank"
+                            class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg transition-all duration-200 flex items-center justify-center w-auto inline-flex">
+                            <i class="fa-solid fa-download mr-2"></i>
+                            <span>下载最新版本</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 占位小组件 -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6 border-2 border-dashed border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+                <h3 class="text-lg font-medium text-gray-500 dark:text-gray-400">更多应用正在适配</h3>
+                <p class="text-sm text-gray-400 dark:text-gray-500 mt-1 text-center">我们正在努力加入更多应用</p>
+            </div>
+        </div>
+
+        <!-- 底部信息 -->
+        <footer class="mt-12 text-center text-gray-500 dark:text-gray-400 text-sm">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-card card-transition p-6">
+                <h3 class="text-lg font-medium text-gray-500 dark:text-gray-400">更新时间<br><span id="Update-time">NaN</span></h3>
+                <p class="text-sm text-gray-400 dark:text-gray-500 mt-1 text-center">© <span id="year"></span> 邵阳市第一中学信息技术社团</p>
+                <p class="text-sm text-gray-400 dark:text-gray-500 mt-1 text-center">邵阳市第一中学校园公共服务提供服务支持</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://sysyzspublic.rth1.xyz/host/SID/fastuse.js"></script>
+    <script>
+        // 动态设置年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
