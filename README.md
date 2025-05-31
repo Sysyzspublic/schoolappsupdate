@@ -2,11 +2,11 @@
 为学校统一配置的云电脑提供的常用程序快速更新服务
 
 ## 目录
-1. [开发原因](/#开发原因)
-2. [快速使用](/#快速使用)
-3. [私有化部署](/#私有化部署)
-4. [免费托管服务](/#免费托管服务)
-5. [希沃一体机常用教学软件下载目录](/#希沃一体机常用教学软件下载目录)
+1. [开发原因](/schoolappsupdate/#开发原因)
+2. [快速使用](/schoolappsupdate/#快速使用)
+3. [私有化部署](/schoolappsupdate/#私有化部署)
+4. [免费托管服务](/schoolappsupdate/#免费托管服务)
+5. [希沃一体机常用教学软件下载目录](/schoolappsupdate/#希沃一体机常用教学软件下载目录)
 
 ## 开发原因
 部分学校的办公电脑采用的是配置低、运行速度慢的云电脑，运行一些办公软件（如 QQ 、微信等）的最新版本将会严重拖慢系统速度，造成卡顿。一部分地区的学校信息化普及时间较晚，存在老教师不会操作的问题。
@@ -271,7 +271,7 @@ for (const [id, text] of Object.entries(appVersionTexts)) {
 若您所在的学校相关资源较为缺乏，可向我们寻求免费的页面托管服务。如有需要，请发送邮件到 [sysyzspublic@outlook.com](mailto:sysyzspublic@outlook.com) 。
 
 ## 希沃一体机常用教学软件下载目录
-- [打开](./seewo/html)
+- [打开](./schoolappsupdate/seewo/html)
 
 <hr>
 
