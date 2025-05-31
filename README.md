@@ -1,6 +1,13 @@
 # SchoolAppsUpdate
 为学校统一配置的云电脑提供的常用程序快速更新服务
 
+## 目录
+1. [开发原因](/#开发原因)
+2. [快速使用](/#快速使用)
+3. [私有化部署](/#私有化部署)
+4. [免费托管服务](/#免费托管服务)
+5. [希沃一体机常用教学软件下载目录](/#希沃一体机常用教学软件下载目录)
+
 ## 开发原因
 部分学校的办公电脑采用的是配置低、运行速度慢的云电脑，运行一些办公软件（如 QQ 、微信等）的最新版本将会严重拖慢系统速度，造成卡顿。一部分地区的学校信息化普及时间较晚，存在老教师不会操作的问题。
 
@@ -237,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
   - `ERROR`：报错文本，默认不显示。当目标电脑的下载页面未正确引用 SID 文件时，页面将无法使用并报错。
   - `Update-time`：页脚的更新时间。
 - 映射到 html 文件中的对应 ID
+
 ```js
 for (const [id, link] of Object.entries(appLinks)) {
     const element = document.getElementById(id);
@@ -261,6 +269,9 @@ for (const [id, text] of Object.entries(appVersionTexts)) {
 > 免费托管服务页面的访问速度取决于您所在地区的网络速度。
 
 若您所在的学校相关资源较为缺乏，可向我们寻求免费的页面托管服务。如有需要，请发送邮件到 [sysyzspublic@outlook.com](mailto:sysyzspublic@outlook.com) 。
+
+## 希沃一体机常用教学软件下载目录
+- [打开](./seewo/html)
 
 <hr>
 
