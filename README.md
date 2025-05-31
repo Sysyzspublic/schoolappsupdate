@@ -271,7 +271,7 @@ for (const [id, text] of Object.entries(appVersionTexts)) {
 若您所在的学校相关资源较为缺乏，可向我们寻求免费的页面托管服务。如有需要，请发送邮件到 [sysyzspublic@outlook.com](mailto:sysyzspublic@outlook.com) 。
 
 ## 希沃一体机常用教学软件下载目录
-- [打开](./schoolappsupdate/seewo/html)
+- [打开](./seewo/index.html)
 
 <hr>
 
